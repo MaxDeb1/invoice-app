@@ -40,12 +40,12 @@ Users should be able to:
 
 ### Built with
 
-- [Next.js](https://nextjs.org/) - React framework
+- [Next.js](https://nextjs.org/) 13 - React framework
 - [Sass Modules](https://sass-lang.com/) - For styles
 - [TypeScript](https://www.typescriptlang.org/) - TypeScript
 - [PostgreSQL](https://www.postgresql.org/) - Database management system
 - [Prisma](https://www.prisma.io/) - ORM
-  -- - [Heroku](https://www.heroku.com/) - Cloud platform--
+- ~~[Heroku](https://www.heroku.com/) - Cloud platform~~
 - [Supabase](https://supabase.com/) - Cloud platform
 
 ### Author
