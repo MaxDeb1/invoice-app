@@ -1,0 +1,72 @@
+@import "./colors";
+
+$themes: (
+  light: (
+    elements-color: $primary-200,
+    background-color: $primary-300,
+    text-color: $blue-050,
+    text2-color: $blue-700,
+    text3-color: $blue-600,
+    card-bg-color: $primary-100,
+    filter-bg-color: $primary-200,
+    newInvoice-bg-color: $primary-050,
+    discardBtn-color: $primary-400,
+    saveBtn-color: $blue-500,
+    sendBtn-color: $purple-100,
+    ),
+  dark: (
+    elements-color: $blue-200,
+    background-color: $blue-100,
+    text-color: $primary-050,
+    text2-color: $primary-400,
+    text3-color: $primary-400,
+    card-bg-color: $blue-200,
+    filter-bg-color: $blue-300,
+    newInvoice-bg-color: $blue-200,
+    discardBtn-color: $primary-050,
+    saveBtn-color: $blue-300,
+    sendBtn-color: $purple-100,
+    ),
+);
+
+
+@mixin themed() {
+  @each $theme, $map in $themes {
+    :global(.theme--#{$theme}) & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@mixin gthemed() {
+  @each $theme, $map in $themes {
+    .theme--#{$theme} & {
+      $theme-map: () !global;
+      @each $key, $submap in $map {
+        $value: map-get(map-get($themes, $theme), '#{$key}');
+        $theme-map: map-merge($theme-map, ($key: $value)) !global;
+      }
+      @content;
+      $theme-map: null !global;
+    }
+  }
+}
+
+@function t($key) {
+  @return map-get($theme-map, $key);
+}
+
+// usage
+/* .myClass {
+  @include themed(){
+    background: t("my-class-bg");
+    color: t("text-color");
+  }
+} */
+

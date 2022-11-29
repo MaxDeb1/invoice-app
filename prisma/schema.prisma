@@ -1,0 +1,40 @@
+generator client {
+  provider = "prisma-client-js"
+  //previewFeatures = ["referentialActions"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Invoice {
+  id                     String   @id
+  createdAt              DateTime @db.Timestamp(6)
+  paymentDue             DateTime @db.Timestamp(6)
+  description            String?
+  paymentTerms           Int
+  clientName             String
+  clientEmail            String?
+  status                 String
+  senderAddress_street   String?
+  senderAddress_city     String?
+  senderAddress_postCode String?
+  senderAddress_country  String?
+  clientAddress_street   String?
+  clientAddress_city     String?
+  clientAddress_postCode String?
+  clientAddress_country  String?
+  total                  Decimal  @db.Decimal(7, 2)
+  Items                  Items[]
+}
+
+model Items {
+  item_id       Int      @id @default(autoincrement())
+  invoice_id    String
+  item_name     String?
+  item_quantity Int?
+  item_price    Decimal? @db.Decimal(7, 2)
+  item_total    Decimal  @db.Decimal(7, 2)
+  invoice       Invoice  @relation(fields: [invoice_id], references: [id], onDelete: Cascade)
+}
