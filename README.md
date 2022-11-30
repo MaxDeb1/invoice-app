@@ -1,6 +1,6 @@
 # Frontend Mentor - Invoice app :construction:
 
-This is a solution to the Invoice app challenge on Frontend Mentor. Frontend Mentor challenges help you improve your coding skills by building realistic projects.
+This is a solution to the Invoice app challenge on [Frontend Mentor](https://www.frontendmentor.io/challenges/invoice-app-i7KaLTQjl). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
 ## Table of contents
 
@@ -40,13 +40,13 @@ Users should be able to:
 
 ### Built with
 
-- [Next.js](https://nextjs.org/) - React framework
-- [Sass Modules](https://sass-lang.com/) - For styles
-- [TypeScript](https://www.typescriptlang.org/) - TypeScript
-- [PostgreSQL](https://www.postgresql.org/) - Database management system
-- [Prisma](https://www.prisma.io/) - ORM
-  -- - [Heroku](https://www.heroku.com/) - Cloud platform--
-- [Supabase](https://supabase.com/) - Cloud platform
+- [Next.js](https://nextjs.org/) 13 as the frontend framework
+- [Sass Modules](https://sass-lang.com/) to style and layout the app
+- [TypeScript](https://www.typescriptlang.org/) as the programming language
+- [Prisma](https://www.prisma.io/) as the Object-Relational Mapper (ORM)
+- [PostgreSQL](https://www.postgresql.org/) as the database management system
+- ~~[Heroku](https://www.heroku.com/) - Cloud platform~~
+- [Supabase](https://supabase.com/) as the storage system
 
 ### Author
 
