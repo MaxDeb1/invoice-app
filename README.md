@@ -43,10 +43,10 @@ Users should be able to:
 - [Next.js](https://nextjs.org/) 13 as the frontend framework
 - [Sass Modules](https://sass-lang.com/) to style and layout the app
 - [TypeScript](https://www.typescriptlang.org/) as the programming language
-- [PostgreSQL](https://www.postgresql.org/) as the database management system
 - [Prisma](https://www.prisma.io/) as the Object-Relational Mapper (ORM)
+- [PostgreSQL](https://www.postgresql.org/) as the database management system
 - ~~[Heroku](https://www.heroku.com/) - Cloud platform~~
-- [Supabase](https://supabase.com/) as the cloud platform
+- [Supabase](https://supabase.com/) as the storage system
 
 ### Author
 
