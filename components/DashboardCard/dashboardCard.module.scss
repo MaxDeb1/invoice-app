@@ -1,0 +1,172 @@
+@use '../../styles/mixins' as mixin;
+@import '../../styles/colors';
+@import '../../styles/theme.scss';
+
+.card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1.5fr 1fr 1fr;
+    grid-template-areas: "invoiceID clientName"
+                         "paymentDue status"
+                         "total status";
+    width: 100%;
+    height: 134px;
+    margin-bottom: 16.5px;
+    padding: 22.5px 24px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    font-size: 0.719rem;
+    letter-spacing: 0.4px;
+    color: $primary-050;
+    position: relative;
+    cursor: pointer;
+
+    &:hover {
+        border-color: $purple-100;
+    }
+
+    @include mixin.mq(medium) {
+        grid-template-columns: 2fr 3fr 3fr 2.5fr 3fr;
+        grid-template-rows: 1fr;
+        grid-template-areas: "invoiceID paymentDue clientName total status";
+        height: 73px;
+        padding-block: 0;
+        margin-bottom: 15px;
+        align-items: center;
+        font-size: 0.74rem;
+    }
+
+    @include themed(){
+        background-color: t("card-bg-color");
+    }
+
+    .invoiceID {
+        grid-area: invoiceID;
+        font-weight: bold;
+
+        @include mixin.mq(medium) {
+            display: flex;
+            justify-content: start;
+        }
+
+        span {
+            color: $blue-600;
+        }
+    }
+
+    .paymentDue {
+        grid-area: paymentDue;
+
+        @include mixin.mq(medium) {
+            display: flex;
+            justify-content: start;
+        }
+
+        span {
+            margin-left: 3px;
+
+            @include mixin.mq(medium) {
+                margin-left: 4px;
+            }
+        }
+    }
+
+    .clientName {
+        grid-area: clientName;
+        display: flex;
+        justify-content: end;
+
+        @include mixin.mq(medium) {
+            justify-content: start;
+            margin-right: 26px;
+        }
+    }
+
+    .clientName,
+    .paymentDue {
+        font-size: 0.734rem;
+
+        @include themed(){
+            color: t("text3-color");
+        }
+    }
+    
+    .total {
+        grid-area: total;
+        font-size: 0.969rem;
+        font-weight: bold;
+        letter-spacing: 0.3px;
+
+        @include mixin.mq(medium) {
+            display: flex;
+            justify-content: end;
+            margin-right: 14px;
+        }
+    }
+
+    .arrowRight {
+        display: none;
+
+        @include mixin.mq(medium) {
+            position: absolute;
+            display: block;
+            right: 22px;
+        }
+    }
+}
+
+.status {
+    grid-area: status;
+    display: flex;
+    justify-content: end;
+
+    .statusBox {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 102px;
+        height: 40px;
+        font-weight: bold;
+
+        @include mixin.mq(medium) {
+            margin-right: 24px;
+        }
+    }
+
+    .dot {
+        width: 8px;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        margin-right: 9px;
+        transform: translateY(1px);
+    }
+
+    &.paid {
+        .statusBox {
+            color: $green-100;
+            background-color: $green-200;
+        }
+        .dot {
+            background-color: $green-100;
+        }
+    }
+
+    &.pending {
+        .statusBox {
+            color: $orange-100;
+            background-color: $orange-200;
+        }
+        .dot {
+            background-color: $orange-100;
+        }
+    }
+    &.draft {
+        .statusBox {
+            color: $primary-400;
+            background-color: $purple-300;
+        }
+        .dot {
+            background-color: $primary-400;
+        }
+    }
+}

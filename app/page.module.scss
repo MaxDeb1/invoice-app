@@ -1,13 +1,14 @@
-@use '../styles/mixins' as mixin;
+@use "../styles/mixins" as mixin;
 
 .container {
-  width: 100%;
+  width: 100vw;
   min-height: 100vh;
   padding: 0 24.5px;
   position: relative;
 
   @include mixin.mq(large) {
-    padding-inline: 1.8rem 1.96rem; 
+    width: calc(100vw - 111px);
+    padding-inline: 1.8rem 1.96rem;
   }
 }
 
@@ -21,4 +22,3 @@
     padding-top: 72px;
   }
 }
-

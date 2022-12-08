@@ -1,0 +1,50 @@
+@use '../../../styles/mixins' as mixin;
+@import '../../../styles/colors.scss';
+@import '../../../styles/theme.scss';
+
+.menuBtns {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+
+    @include mixin.mq(medium) {
+        flex-wrap: non-wrap;
+    }
+
+    button {
+        width: 100%;
+        height: 40px;
+        padding-inline: 1.5rem;
+        border: 0;
+        border-radius: 100vmax;
+        color: $primary-400;
+
+        @include mixin.mq(medium) {
+            width: auto;
+        }
+    }
+
+    .discardBtn {
+        color: $blue-500;
+
+        @include themed(){
+            background-color: t("discardBtn-color");
+        }
+    }
+
+    .saveBtn {
+        margin-left: auto;
+
+        @include themed(){
+            background-color: t("saveBtn-color");
+        }
+    }
+
+    .sendBtn {
+        @include themed(){
+            background-color: t("sendBtn-color");
+        }
+    }
+}
