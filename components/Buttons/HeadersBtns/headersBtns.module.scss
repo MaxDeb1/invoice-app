@@ -1,0 +1,74 @@
+@use '../../../styles/mixins' as mixin;
+@import '../../../styles/colors.scss';
+@import '../../../styles/theme.scss';
+
+.newInvoiceBtn {
+  width: 90px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2px;
+  padding: 0 13.5px 0 6px;
+  border-radius: 100vmax;
+  background-color: $purple-100;
+  color: $primary-050;
+  font-size: 0.705rem;
+  font-weight: bold;
+  letter-spacing: 0.06rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $purple-200;
+  }
+
+  @include mixin.mq(medium) {
+    width: 150px;
+    height: 48px;
+    margin-top: 0px;
+    padding-inline: 8px 15px;
+    letter-spacing: 0.04rem;
+    transform: translate(1px, -1px);
+  }
+
+  .iconPlus {
+    display: grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    background-color: $primary-200;
+    border-radius: 50%;
+
+    span {
+      transform: translate(1px, 1px);
+    }
+  }
+}
+
+.defaultBtn {
+  height: 47px;
+  padding-inline: 1.5rem;
+  border: none;
+  border-radius: 100vmax;
+  font-size: 0.75rem;
+  font-weight: bold;
+  cursor: pointer;
+
+  // Mark as button
+  background-color: $purple-100;
+  color: $primary-050;
+}
+
+.Edit {
+  margin-left: auto;
+
+  @include themed(){
+      background-color: t("filter-bg-color");
+      color: t("text-color")
+  }
+}
+
+.Delete {
+  background-color: $red-100;
+  color: $primary-050;
+}

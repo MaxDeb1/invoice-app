@@ -1,0 +1,171 @@
+@use "../../styles/mixins" as mixin;
+@import "../../styles/colors";
+@import "../../styles/theme.scss";
+
+
+.invoice_details {
+  $pad2 : 2rem;
+
+  width: 100%;
+  height: 100%;
+  margin-top: 2rem;
+  padding: $pad2;
+  border-radius: 7px;
+  font-size: 0.75rem;
+
+  @include themed() {
+    background-color: t("card-bg-color");
+    color: t("text4-color");
+  }
+
+  .top {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .identification .id {
+    font-size: 0.938rem;
+    letter-spacing: 1px;
+  }
+
+  .senderAdress {
+    text-align: end;
+  }
+
+  .middle {
+    display: flex;
+    margin-bottom: 2rem;
+
+    > * {
+      flex: 1;
+    }
+
+    .calendar {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  }
+
+  .bottom {
+    padding: $pad2 $pad2 0 $pad2;
+
+    > * {
+      display: flex;
+      align-items: center;
+    }
+
+    @include themed() {
+      background-color: t("filter-bg-color");
+    }
+
+    .itemDetails {
+      display: grid;
+      grid-template-columns: 1fr max-content;
+      grid-template-rows: repeat(2, 1fr);
+
+      @include themed() {
+        color: t("text3-color");
+      }
+
+      @include mixin.mq(large) {
+        grid-template-columns: repeat(4, 1fr);;
+        grid-template-rows: 1fr;
+      }
+
+      .total {
+        grid-area: 1 / 2 / 2 / 3;
+        
+        @include mixin.mq(large) {
+          grid-area: 1 / 4 / 2 / 5;
+        }
+      }
+
+      .command {
+        text-align: start;
+      }
+    }
+
+/*     @include mixin.mq(large) {
+      .itemDetails {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr;
+      }
+    } */
+
+    .grandTotal {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-block: $pad2;
+      clip-path:  inset(0 -$pad2);
+  
+      @include themed() {
+        box-shadow: 0 0 0 $pad2 t("total-bg-color");
+        background-color: t("total-bg-color");
+        color: t("text3-color");
+      }
+    }
+
+    .grandTotal_title {
+      @include themed() {
+        color: t("text4-color");
+      }
+    }
+
+    .grandTotal_price {
+      font-size: 1.5rem;
+    }
+  
+  }
+
+
+  .headerCells.desktop {
+    display: flex;
+    align-items: center;
+  }
+
+  .headerCells,
+  .itemDetails {
+    padding-bottom: $pad2;
+
+    > * {
+      flex: 1.5;
+      text-align: end;
+    }
+
+    :first-child {
+      flex: 4;
+      text-align: start;
+    }
+
+    :nth-child(2) {
+      flex: content;
+      text-align: center;
+    }
+
+    :last-child {
+      flex: 2;
+    }
+  }
+
+  .id span,
+  .date,
+  .clientName,
+  .email {
+    font-size: 0.938rem;
+    font-weight: bold;
+
+    @include themed() {
+      color: t("text3-color");
+    }
+  }
+
+  .date,
+  .clientName,
+  .email {
+    line-height: 2rem;
+  }
+}

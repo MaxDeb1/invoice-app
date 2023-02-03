@@ -1,0 +1,74 @@
+@use "../../styles/mixins" as mixin;
+@import "../../styles/colors.scss";
+@import "../../styles/theme.scss";
+
+.dropdown {
+  width: 54px;
+  margin-inline: auto 17px;
+  font-size: 0.7rem;
+  position: relative;
+
+  @include mixin.mq(medium) {
+    width: 117px;
+    margin-inline: auto 40px;
+  }
+
+  &.active {
+    .dropbtn img {
+      transform: rotate(180deg);
+    }
+  }
+
+  .dropbtn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: inherit;
+    color: inherit;
+    border: 0;
+    letter-spacing: 0.047rem;
+    cursor: pointer;
+  }
+
+  .filter {
+    width: 192px;
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 20px -25px rgba(0 0 0 / 0.1), 0 10px -10px rgba(0 0 0 / 0.04);
+    position: absolute;
+    bottom: -9rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+
+    @include themed() {
+      background-color: t("filter-bg-color");
+    }
+  }
+
+  .option {
+    padding: 0 16px;
+    display: flex;
+    gap: 1rem;
+    font-weight: bold;
+
+    input[type="checkbox"] {
+      accent-color: $purple-100;
+      cursor: pointer;
+    }
+    input[type="checkbox"]:hover + label[for="#box1"] {
+      color: $primary-400;
+    }
+    input[type="checkbox"]:hover + label[for="#box2"] {
+      color: $orange-100;
+    }
+    input[type="checkbox"]:hover + label[for="#box3"] {
+      color: $green-100;
+    }
+  }
+}
