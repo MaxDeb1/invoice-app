@@ -40,10 +40,11 @@ Users should be able to:
 
 ### Built with
 
-- [Next.js](https://nextjs.org/) 13 as the frontend framework
+- [Next.js 13 app directory (beta)](https://nextjs.org/) as the frontend framework
 - [Sass Modules](https://sass-lang.com/) to style and layout the app
 - [TypeScript](https://www.typescriptlang.org/) as the programming language
 - [Prisma](https://www.prisma.io/) as the Object-Relational Mapper (ORM)
+- [React Hook Form](https://react-hook-form.com/) for form state management and validation
 - [PostgreSQL](https://www.postgresql.org/) as the database management system
 - ~~[Heroku](https://www.heroku.com/) - Cloud platform~~
 - [Supabase](https://supabase.com/) as the storage system
