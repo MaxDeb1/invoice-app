@@ -1,23 +1,25 @@
-import React from 'react';
-import styles from './AddNewItemBtn.module.scss';
+"use client";
 
-interface NewItemProps {
-    newItem: number[],
-    setNewItem: React.Dispatch<React.SetStateAction<number[]>>
-}
+import Image from "next/image";
+import IconPlus from "/assets/icon-plus.svg";
+import { FieldValues, UseFieldArrayAppend } from "react-hook-form/dist/types";
+import styles from "./AddNewItemBtn.module.scss";
 
-const AddNewItemBtn = ({newItem, setNewItem}: NewItemProps ) => {
+type AddProps = {
+  append: UseFieldArrayAppend<FieldValues, "items">;
+};
 
-    const addNewItem = () => {
-        setNewItem([...newItem, parseInt(newItem.at(-1)) + 1])
-    }
+const AddNewItemBtn = ({ append }: AddProps) => {
+  const addNewItem = () => {
+    append({});
+  };
 
-    return (
-        <button type="button" className={styles.addBtn} onClick={addNewItem}>
-            <img src="./assets/icon-plus.svg" alt=""/>
-            Add New Item
-        </button>
-    );
+  return (
+    <button type="button" className={styles.addBtn} onClick={addNewItem}>
+      <Image src={IconPlus} alt="" />
+      Add New Item
+    </button>
+  );
 };
 
 export default AddNewItemBtn;

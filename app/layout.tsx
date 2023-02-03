@@ -1,20 +1,15 @@
-/* import "./globals.css"; */
 import Toolbar from "components/Toolbar";
 import "styles/index.scss";
 import ThemeProvider from "./theme-provider";
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head />
       <body>
         <ThemeProvider>
           <Toolbar />
-          {children}
+            {children}
         </ThemeProvider>
       </body>
     </html>

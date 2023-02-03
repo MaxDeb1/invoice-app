@@ -16,14 +16,14 @@ const ToggleDarkMode = () => {
     <div className={styles.toggleDarkMode} onClick={handleOnClick}>
       {darkMode ? (
         <Image
-          src="/assets/icon-moon.svg"
+          src="/assets/icon-sun.svg"
+          alt="moon icon"
           width={20}
           height={20}
-          alt="moon icon"
         />
       ) : (
         <Image
-          src="/assets/icon-sun.svg"
+          src="/assets/icon-moon.svg"
           alt="sun icon"
           width={20}
           height={20}

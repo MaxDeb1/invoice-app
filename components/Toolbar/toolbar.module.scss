@@ -1,108 +1,108 @@
-@use '../../styles/mixins' as mixin;
-@import '../../styles/colors.scss';
+@use "../../styles/mixins" as mixin;
+@import "../../styles/colors.scss";
 
 .sidebar {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: 72px;
-    background-color: $blue-300;
-    position: relative;
-    z-index: 1;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 72px;
+  background-color: $blue-300;
+  position: relative;
+  z-index: 1;
 
-    @include mixin.mq(large) {
-        flex-direction: column;
-        width: 111px;
-        height: 100%;
-        border-radius: 0 20px 20px 0;
-        z-index: 10;
-    }
+  @include mixin.mq(large) {
+    position: sticky;
+    top: 0;
+    flex-direction: column;
+    width: 103px;
+    height: 100vh;
+    border-radius: 0 20px 20px 0;
+    z-index: 10;
+  }
 }
 
 .logo {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 72px;
-    height: 100%;
-    background-color: $purple-100;
-    border-radius: 0 20px 20px 0;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 72px;
+  height: 100%;
+  background-color: $purple-100;
+  border-radius: 0 20px 20px 0;
+  position: relative;
+
+  @include mixin.mq(large) {
+    width: 100%;
+    height: 103px;
+  }
+
+  img {
+    width: 28px;
+    height: 26px;
+    z-index: 10;
 
     @include mixin.mq(large) {
-        width: 100%;
-        height: 103px;
+      width: 39px;
+      height: 37px;
     }
-
-    img {
-        width: 28px;
-        height: 26px;
-        z-index: 10;
-
-        @include mixin.mq(large) {
-                width: 39px;
-                height: 37px;
-        }
-    }
+  }
 }
 
 .logo::after {
-    content: '';
-    width: 100%;
-    height: 50%;
-    background-color: $purple-200;
-    border-radius: 20px 0 20px 0;
-    position: absolute;
-    bottom: 0;
-    z-index: 2;
+  content: "";
+  width: 100%;
+  height: 50%;
+  background-color: $purple-200;
+  border-radius: 20px 0 20px 0;
+  position: absolute;
+  bottom: 0;
+  z-index: 2;
 }
 
 .toggleDarkMode {
-    margin: 0 24px 0 auto;
-    cursor: pointer;
+  margin: 0 24px 0 auto;
+  cursor: pointer;
 
-    @include mixin.mq(large) {
-        margin: auto 0 24px 0;
-    }
+  @include mixin.mq(large) {
+    margin: auto 0 33px 0;
+  }
 }
 
 .profile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 80px;
-    height: 100%;
-    border-left: 1px solid $blue-500;
-    transform: translateX(-1px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 100%;
+  border-left: 1px solid $blue-500;
+  transform: translateX(-1px);
 
-    img {
-        width: 32px;
-        height: 32px;
-        border-radius: 50%;
-        cursor: pointer;
+  img {
+    width: 32px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    cursor: pointer;
+  }
 
-        @include mixin.mq(large) {
-            width: 42px;
-            height: 42px;
-        }
+  &:hover .shadow {
+    position: absolute;
+    width: 32px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 0px 1.5px $purple-100;
+    pointer-events: none;
+  }
 
-/*         &:hover {
-            outline: 2px solid $purple-100;
-        } */
-    }
+  @include mixin.mq(large) {
+    width: 100%;
+    height: 88px;
+    border-top: 1px solid $blue-500;
 
+    img,
     &:hover .shadow {
-        position: absolute;
-        width: 42px;
-        height: 42px;
-        border-radius: 50%;
-        box-shadow:inset 0px 0px 0px 1.5px $purple-100;
-        pointer-events: none;
-      }
-
-    @include mixin.mq(large) {
-        width: 100%;
-        height: 88px;
-        border-top: 1px solid $blue-500;
+      width: 42px;
+      aspect-ratio: 1 / 1;
+      transform: translateY(-1px);
     }
+  }
 }

@@ -3,8 +3,7 @@
 .container {
   width: 100vw;
   min-height: 100vh;
-  padding: 0 24.5px;
-  position: relative;
+  padding-inline: 24px 24.5px;
 
   @include mixin.mq(large) {
     width: calc(100vw - 111px);
@@ -14,11 +13,14 @@
 
 .main {
   width: 100%;
-  min-height: 100vh;
   padding-top: 30px;
 
   @include mixin.mq(large) {
-    padding-inline: 15.5vw 22.5vw;
-    padding-top: 72px;
+    padding-inline: 15.5vw 22vw;
+    padding-top: 73px;
   }
+}
+
+.unclickable {
+  pointer-events: none;
 }

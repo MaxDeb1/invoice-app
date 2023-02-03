@@ -7,12 +7,14 @@ $themes: (
     text-color: $blue-050,
     text2-color: $blue-700,
     text3-color: $blue-600,
+    text4-color: $blue-600,
     card-bg-color: $primary-100,
     filter-bg-color: $primary-200,
     newInvoice-bg-color: $primary-050,
     discardBtn-color: $primary-400,
     saveBtn-color: $blue-500,
     sendBtn-color: $purple-100,
+    total-bg-color: $blue-500,
     ),
   dark: (
     elements-color: $blue-200,
@@ -20,12 +22,14 @@ $themes: (
     text-color: $primary-050,
     text2-color: $primary-400,
     text3-color: $primary-400,
+    text4-color: $blue-600,
     card-bg-color: $blue-200,
     filter-bg-color: $blue-300,
     newInvoice-bg-color: $blue-200,
     discardBtn-color: $primary-050,
     saveBtn-color: $blue-300,
     sendBtn-color: $purple-100,
+    total-bg-color: $blue-050,
     ),
 );
 
@@ -69,4 +73,3 @@ $themes: (
     color: t("text-color");
   }
 } */
-

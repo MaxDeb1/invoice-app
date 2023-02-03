@@ -10,11 +10,7 @@ export type ThemeContextType = {
 
 export const ThemeContext = createContext<Partial<ThemeContextType>>({});
 
-export default function ThemeProvider({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ThemeProvider({ children }: { children: React.ReactNode }) {
   const isDarkMode = () =>
     window.matchMedia &&
     window.matchMedia("(prefers-color-scheme: dark)").matches;
