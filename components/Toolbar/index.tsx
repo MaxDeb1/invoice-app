@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import Logo from "/assets/logo.svg";
 /* import Avatar from "/assets/image-avatar.jpg"; */

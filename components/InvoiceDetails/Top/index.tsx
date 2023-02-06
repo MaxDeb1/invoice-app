@@ -1,23 +1,25 @@
-import type { Invoice } from '@prisma/client'
+"use client";
+
+import type { Invoice, Items } from '@prisma/client'
 import styles from "../invoiceDetails.module.scss";
 
-const Top = ({ invoice }: {invoice: Invoice}) => {
+const Top = ({invoice}: {invoice: Invoice & {Items: Items[]} | null | undefined }) => {
   return (
     <div className={styles.top}>
       <div className={styles.identification}>
         <div className={styles.id}>
-          #<span>{invoice?.id}</span>
+          #<span>{invoice!.id}</span>
         </div>
-        <div className={styles.description}>{invoice?.description}</div>
+        <div className={styles.description}>{invoice!.description}</div>
       </div>
       <address className={styles.senderAdress}>
-        {invoice?.senderAddress_street}
+        {invoice!.senderAddress_street}
         <br />
-        {invoice?.senderAddress_city}
+        {invoice!.senderAddress_city}
         <br />
-        {invoice?.senderAddress_postCode}
+        {invoice!.senderAddress_postCode}
         <br />
-        {invoice?.senderAddress_country}
+        {invoice!.senderAddress_country}
         <br />
       </address>
     </div>

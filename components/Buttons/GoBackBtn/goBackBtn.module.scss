@@ -31,8 +31,6 @@
 
     @include mixin.mq(medium) {
       display: block;
-      width: 10px;
-      height: 10px;
     }
   }
 }

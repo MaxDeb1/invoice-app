@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useState } from 'react';
 import { useFormContext } from "react-hook-form";
 import styles from '../invoiceForm.module.scss';

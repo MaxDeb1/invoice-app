@@ -1,6 +1,6 @@
 "use client";
 
-import type { Invoice } from '@prisma/client'
+import type { Invoice, Items } from '@prisma/client'
 import GoBackBtn from "components/Buttons/GoBackBtn";
 import InvoicePageHeader from "components/Headers/InvoicePageHeader";
 import InvoiceDetails from "components/InvoiceDetails";
@@ -10,7 +10,7 @@ import { DrawerContext } from "contexts/drawerOpeningContext"
 import styles from "app/page.module.scss";
 
 
-const Main = ({invoice}: {invoice: Invoice}) => {
+const Main = ({invoice}: {invoice: Invoice & {Items: Items[]} | null | undefined }) => {
   const { isOpen } = useContext(DrawerContext);
 
   return (
@@ -18,7 +18,7 @@ const Main = ({invoice}: {invoice: Invoice}) => {
       <GoBackBtn />
       <InvoicePageHeader invoice={invoice}/>
       <InvoiceDetails invoice={invoice}/>
-      <AddEdit props={invoice} />
+      <AddEdit invoice={invoice} />
     </main>
   );
 };

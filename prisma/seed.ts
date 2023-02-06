@@ -2,7 +2,7 @@ import { prisma } from "../lib/prismadb";
 
 async function main() {
   const invoice1 = await prisma.invoice.upsert({
-    where: { id: "RT2080" },
+    where: { id: "RT3080" },
     update: {},
     create: {
       id: "RT3080",
