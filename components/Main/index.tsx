@@ -9,8 +9,7 @@ import InvoicesList from "components/InvoicesList";
 import AddEdit from "components/Form/AddEdit";
 import styles from "app/page.module.scss";
 
-
-const Main = ({invoices}: {invoices: Invoice[] | undefined}) => {
+const Main = ({invoices}: {invoices: Invoice[]}) => {
   const { isOpen } = useContext(DrawerContext);
 
   const { filters } = useContext(StatusFilterContext);

@@ -1,10 +1,10 @@
 "use client";
 
-import type { Invoice, Items } from '@prisma/client';
+import { InvoiceType } from "../../../@types/invoice";
 import { dateDDMMYYFormat } from '../../../utils';
 import styles from "../invoiceDetails.module.scss";
 
-const Middle = ({invoice}: {invoice: Invoice & {Items: Items[]} | null | undefined }) => {
+const Middle = ({invoice}: {invoice?: InvoiceType | null }) => {
 
   return (
     <div className={styles.middle}>

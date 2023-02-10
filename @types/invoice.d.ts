@@ -1,4 +1,4 @@
-import type { Invoice } from '@prisma/client'
+import type { Invoice, Items } from '@prisma/client';
 
 export type InvoiceType = {
   id: string

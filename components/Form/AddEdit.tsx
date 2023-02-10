@@ -1,8 +1,8 @@
 "use client";
 
-import type { Invoice, Items } from '@prisma/client'
+import { InvoiceType } from "../../@types/invoice";
 import { useState, useContext, useEffect } from "react";
-import { FormProvider, SubmitHandler, useForm } from "react-hook-form";
+import { FormProvider, useForm } from "react-hook-form";
 import { DrawerContext } from "contexts/drawerOpeningContext";
 import BillFrom from "./BillFrom";
 import BillTo from "./BillTo";
@@ -11,7 +11,7 @@ import FormBtns from "components/Buttons/FormBtns";
 import styles from "./invoiceForm.module.scss";
 
 
-const AddEdit = (invoice: {invoice: Invoice & {Items: Items[]} | null | undefined }) => {
+const AddEdit = (invoice: {invoice?: InvoiceType | null}) => {
   const isAddMode = !invoice;
 
   const { isOpen, setIsOpen } = useContext(DrawerContext);
@@ -51,7 +51,7 @@ const AddEdit = (invoice: {invoice: Invoice & {Items: Items[]} | null | undefine
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const onSubmit = (data: Invoice & {Items: Items[]}) => /* console.log(data);  */{
+  const onSubmit = (data: InvoiceType) => /* console.log(data);  */{
     
     return fetch('/api/addEditInvoice', {
       method: 'POST',

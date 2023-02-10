@@ -1,12 +1,11 @@
 "use client";
 
-/* import type { Items } from '@prisma/client' */
 import { ItemsType } from '../../../@types/invoice';
 import { formatNumber } from '../../../utils';
 import useMatchMedia from "hooks/useMatchMedia";
 import styles from "../invoiceDetails.module.scss";
 
-const Bottom = ({ invoiceItems }: {invoiceItems: ItemsType[] /* Invoice["Items"] */ }) => {
+const Bottom = ({ invoiceItems }: {invoiceItems: ItemsType[] }) => {
   const match: boolean = useMatchMedia();
 
   const total = invoiceItems.reduce((accumulator, currentValue) => accumulator + Number(currentValue.item_total), 0)
